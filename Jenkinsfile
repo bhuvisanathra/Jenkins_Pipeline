@@ -10,9 +10,9 @@ pipeline {
             steps {
                 script {
                     if (isUnix()) {
-                        sh 'docker build -t bhuvneshsanathra/Jenkins_Pipeline .'
+                        sh 'docker build -t bhuvneshsanathra/jenkins_pipeline .'
                     } else {
-                        bat 'docker build -t bhuvneshsanathra/Jenkins_Pipeline .'
+                        bat 'docker build -t bhuvneshsanathra/jenkins_pipeline .'
                     }
                 }
             }
@@ -23,11 +23,11 @@ pipeline {
                     script {
                         if (isUnix()) {
                             sh 'docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD'
-                            sh 'docker push bhuvneshsanathra/Jenkins_Pipeline'
+                            sh 'docker push bhuvneshsanathra/jenkins_pipeline'
                             sh 'docker logout'
                         } else {
                             bat 'docker login -u %DOCKERHUB_USERNAME% -p %DOCKERHUB_PASSWORD%'
-                            bat 'docker push bhuvneshsanathra/Jenkins_Pipeline'
+                            bat 'docker push bhuvneshsanathra/jenkins_pipeline'
                             bat 'docker logout'
                         }
                     }
